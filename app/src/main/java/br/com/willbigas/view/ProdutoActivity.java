@@ -46,10 +46,11 @@ public class ProdutoActivity extends AppCompatActivity {
         btnSalvar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // faz algo
+               control.salvarAction();
             }
         });
     }
+
 
     public ProdutoController getControl() {
         return control;

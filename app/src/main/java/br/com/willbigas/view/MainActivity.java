@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
     private MainController mainController;
 
+    private Button btnGerenciarProdutos;
     private Button btnAdicionarProduto;
     private Button btnLimparLista;
     private TextView tvTotal;
@@ -30,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initializeComponents() {
+        btnGerenciarProdutos = findViewById(R.id.btnGerenciarProdutos);
         btnAdicionarProduto = findViewById(R.id.btnAdicionarProduto);
         btnLimparLista = findViewById(R.id.btnLimparLista);
         tvTotal = findViewById(R.id.tvTotal);
@@ -48,6 +50,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 mainController.limparLista();
+            }
+        });
+
+        btnGerenciarProdutos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mainController.redirecionarParaContextoDeGerenciarProdutos();
             }
         });
     }

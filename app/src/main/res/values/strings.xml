@@ -12,4 +12,6 @@
     <string name="preco_do_produto">Preço do Produto</string>
     <string name="salvar">Salvar</string>
     <string name="gerenciar_produtos">Gerenciar Produtos</string>
+    <string name="nome_produto_obrigatorio">Nome do produto é obrigatório</string>
+    <string name="preco_produto_obrigatorio">Preço do produto é obrigatório</string>
 </resources>

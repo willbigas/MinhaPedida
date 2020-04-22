@@ -20,6 +20,9 @@ public class Comanda {
     private Collection<ComandaItem> items;
 
 
+    public Comanda() {
+    }
+
     public Comanda(Double valorTotal, List<ComandaItem> items) {
         this.valorTotal = valorTotal;
         this.items = items;

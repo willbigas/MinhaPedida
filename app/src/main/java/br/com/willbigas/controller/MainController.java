@@ -6,6 +6,7 @@ import br.com.willbigas.model.Comanda;
 import br.com.willbigas.service.ComandaService;
 import br.com.willbigas.view.AdicionarProdutoActivity;
 import br.com.willbigas.view.MainActivity;
+import br.com.willbigas.view.ProdutoActivity;
 
 public class MainController {
 
@@ -27,6 +28,11 @@ public class MainController {
 
     public void redirecionarParaContextoDeAdicionarProduto() {
         Intent intent = new Intent(mainActivity, AdicionarProdutoActivity.class);
+        mainActivity.startActivity(intent);
+    }
+
+    public void redirecionarParaContextoDeGerenciarProdutos() {
+        Intent intent = new Intent(mainActivity, ProdutoActivity.class);
         mainActivity.startActivity(intent);
     }
 

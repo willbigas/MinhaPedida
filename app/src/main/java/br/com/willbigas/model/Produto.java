@@ -3,6 +3,8 @@ package br.com.willbigas.model;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
+import br.com.willbigas.util.UtilNumberFormat;
+
 @DatabaseTable
 public class Produto {
 
@@ -14,6 +16,14 @@ public class Produto {
 
     @DatabaseField(canBeNull = false)
     private Double valor;
+
+    public Produto() {
+    }
+
+    public Produto(String nome, Double valor) {
+        this.nome = nome;
+        this.valor = valor;
+    }
 
     public Produto(Integer id, String nome, Double valor) {
         this.id = id;
@@ -47,6 +57,6 @@ public class Produto {
 
     @Override
     public String toString() {
-        return id + " - " + nome + " - " + valor;
+        return id + " - " + nome + " - " + UtilNumberFormat.deDecimalParaString(valor);
     }
 }

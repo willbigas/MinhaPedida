@@ -8,9 +8,18 @@
     tools:context=".view.MainActivity">
 
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/gerenciar_produtos"
+        android:textColor="@color/colorTextButton"
+        android:background="@color/colorButton"
+        android:id="@+id/btnGerenciarProdutos"/>
+
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:text="@string/adicionar_produto"
             android:textColor="@color/colorTextButton"
             android:background="@color/colorButton"

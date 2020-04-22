@@ -21,6 +21,9 @@ public class ComandaItem {
     @DatabaseField(canBeNull = false, foreign = true, foreignAutoRefresh = true)
     private Comanda comanda;
 
+    public ComandaItem() {
+    }
+
     public ComandaItem(Produto produto, Integer quantidade, Double subtotal, Comanda comanda) {
         this.produto = produto;
         this.quantidade = quantidade;
