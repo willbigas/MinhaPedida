@@ -57,6 +57,6 @@ public class Produto {
 
     @Override
     public String toString() {
-        return id + " - " + nome + " - " + UtilNumberFormat.deDecimalParaString(valor);
+        return id + " - " + nome + " - " + UtilNumberFormat.deDecimalParaStringR$(valor);
     }
 }

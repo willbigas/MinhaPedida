@@ -14,4 +14,7 @@
     <string name="gerenciar_produtos">Gerenciar Produtos</string>
     <string name="nome_produto_obrigatorio">Nome do produto é obrigatório</string>
     <string name="preco_produto_obrigatorio">Preço do produto é obrigatório</string>
+    <string name="produto_adicionado_sucesso">Produto adicionado com sucesso!</string>
+    <string name="comanda_item_adicionado_sucesso">Item da comanda adicionado com sucesso</string>
+    <string name="comanda_item_excluido_sucesso">Item da comanda excluida com sucesso</string>
 </resources>

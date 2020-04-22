@@ -193,6 +193,7 @@ public class ProdutoController {
                 try {
                     produtoDao.getDao().delete(p);
                     adapterProdutos.remove(p);
+                    Toast.makeText(activity, R.string.comanda_item_excluido_sucesso, Toast.LENGTH_SHORT).show();
                 } catch (SQLException ex) {
                     ex.printStackTrace();
                 }

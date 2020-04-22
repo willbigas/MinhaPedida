@@ -18,7 +18,7 @@ public class ComandaService {
     }
 
     public Comanda iniciarComanda() {
-        return new Comanda(0.0, new ArrayList<>());
+        return new Comanda(1, 0.0, new ArrayList<>());
     }
 
     public Comanda adicionarItemNaComanda(Comanda comanda, Produto produto, Integer quantidade) {
@@ -29,9 +29,7 @@ public class ComandaService {
     }
 
 
-
-
-    private Comanda recalcularTotal(Comanda comanda) {
+    public Comanda recalcularTotal(Comanda comanda) {
         Double valorTotal = 0.0;
 
         for (ComandaItem item : comanda.getItems()) {

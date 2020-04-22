@@ -10,7 +10,7 @@ import java.util.List;
 @DatabaseTable
 public class Comanda {
 
-    @DatabaseField(allowGeneratedIdInsert = true , generatedId = true)
+    @DatabaseField(allowGeneratedIdInsert = true, generatedId = true)
     private Integer id;
 
     @DatabaseField(canBeNull = false)
@@ -23,7 +23,8 @@ public class Comanda {
     public Comanda() {
     }
 
-    public Comanda(Double valorTotal, List<ComandaItem> items) {
+    public Comanda(Integer id, Double valorTotal, List<ComandaItem> items) {
+        this.id = id;
         this.valorTotal = valorTotal;
         this.items = items;
     }

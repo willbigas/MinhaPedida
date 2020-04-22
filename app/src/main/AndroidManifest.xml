@@ -11,7 +11,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".view.ProdutoActivity" android:label="@string/gerenciar_produtos"></activity>
         <activity
-            android:name=".view.AdicionarProdutoActivity"
+            android:name=".view.ComandaItemActivity"
             android:label="@string/adicionando_produto" />
         <activity
             android:name=".view.MainActivity"

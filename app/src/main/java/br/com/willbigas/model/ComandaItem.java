@@ -3,6 +3,8 @@ package br.com.willbigas.model;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
+import br.com.willbigas.util.UtilNumberFormat;
+
 @DatabaseTable
 public class ComandaItem {
 
@@ -73,6 +75,6 @@ public class ComandaItem {
 
     @Override
     public String toString() {
-        return produto.getNome() + " - " + produto.getValor() + " - " + quantidade + " - " + subtotal;
+        return produto.getNome() + " - " + UtilNumberFormat.deDecimalParaStringR$(produto.getValor()) + " - " + quantidade + " - " + UtilNumberFormat.deDecimalParaStringR$(subtotal);
     }
 }

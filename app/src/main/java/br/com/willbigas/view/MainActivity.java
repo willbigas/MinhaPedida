@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btnAdicionarProduto;
     private Button btnLimparLista;
     private TextView tvTotal;
-    private ListView lvProdutos;
+    private ListView lvComandaItems;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         btnAdicionarProduto = findViewById(R.id.btnAdicionarProduto);
         btnLimparLista = findViewById(R.id.btnLimparLista);
         tvTotal = findViewById(R.id.tvTotal);
-        lvProdutos = findViewById(R.id.lvProdutos);
+        lvComandaItems = findViewById(R.id.lvComandaItems);
     }
 
     private void initializeClickListeners(){
@@ -59,5 +59,51 @@ public class MainActivity extends AppCompatActivity {
                 mainController.redirecionarParaContextoDeGerenciarProdutos();
             }
         });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        mainController.atualizarItemsDaComanda();
+    }
+
+    public Button getBtnGerenciarProdutos() {
+        return btnGerenciarProdutos;
+    }
+
+    public void setBtnGerenciarProdutos(Button btnGerenciarProdutos) {
+        this.btnGerenciarProdutos = btnGerenciarProdutos;
+    }
+
+    public Button getBtnAdicionarProduto() {
+        return btnAdicionarProduto;
+    }
+
+    public void setBtnAdicionarProduto(Button btnAdicionarProduto) {
+        this.btnAdicionarProduto = btnAdicionarProduto;
+    }
+
+    public Button getBtnLimparLista() {
+        return btnLimparLista;
+    }
+
+    public void setBtnLimparLista(Button btnLimparLista) {
+        this.btnLimparLista = btnLimparLista;
+    }
+
+    public TextView getTvTotal() {
+        return tvTotal;
+    }
+
+    public void setTvTotal(TextView tvTotal) {
+        this.tvTotal = tvTotal;
+    }
+
+    public ListView getLvComandaItems() {
+        return lvComandaItems;
+    }
+
+    public void setLvComandaItems(ListView lvComandaItems) {
+        this.lvComandaItems = lvComandaItems;
     }
 }
