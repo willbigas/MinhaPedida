@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MinhaPedida</string>
+    <string name="minha_comanda">My Command</string>
+    <string name="adicionar_produto">Add Product</string>
+    <string name="limpar_lista">Clear List</string>
+    <string name="total">Total:</string>
+    <string name="adicionando_produto">Adding Product</string>
+    <string name="produto">Product</string>
+    <string name="quantidade">Amount</string>
+    <string name="enviar">Submit</string>
+    <string name="nome_do_produto">Product\'s name</string>
+    <string name="preco_do_produto">Price of the product</string>
+    <string name="salvar">To save</string>
+    <string name="gerenciar_produtos">Manage Products</string>
+    <string name="nome_produto_obrigatorio">Product name is required</string>
+    <string name="preco_produto_obrigatorio">Product price is mandatory</string>
+    <string name="produto_adicionado_sucesso">Product successfully added!</string>
+    <string name="comanda_item_adicionado_sucesso">Command item successfully added</string>
+    <string name="comanda_item_excluido_sucesso">Command item successfully deleted</string>
+</resources>
