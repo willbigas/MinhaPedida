@@ -8,4 +8,16 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="btn_padrao">
+        <item name="android:textColor">#fff</item>
+    </style>
+
+    <style name="btn_danger" parent="btn_padrao">
+        <item name="android:background">#990000</item>
+    </style>
+
+    <style name="btn_purple" parent="btn_padrao">
+        <item name="android:background">@color/colorPrimary</item>
+    </style>
+
 </resources>

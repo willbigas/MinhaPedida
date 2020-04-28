@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/fundo"
     android:padding="16dp"
     tools:context=".view.ComandaItemActivity">
 
@@ -38,8 +39,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:background="@color/colorButton"
+        style="@style/btn_purple"
         android:text="@string/enviar"
-        android:textColor="@color/colorTextButton" />
+        />
 
 </LinearLayout>

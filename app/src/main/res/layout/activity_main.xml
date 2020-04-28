@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/fundo"
     android:padding="16dp"
     tools:context=".view.MainActivity">
 
@@ -39,8 +40,7 @@
             android:layout_marginTop="16dp"
             android:layout_margin="16dp"
             android:text="@string/adicionar_produto"
-            android:textColor="@color/colorTextButton"
-            android:background="@color/colorButton"
+            style="@style/btn_danger"
             android:id="@+id/btnAdicionarProduto"/>
 
 
