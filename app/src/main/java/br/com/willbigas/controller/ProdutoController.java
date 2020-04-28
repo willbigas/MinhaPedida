@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import br.com.willbigas.R;
@@ -55,13 +56,24 @@ public class ProdutoController {
 
     private void inicializarListView() {
         try {
-            listProdutos = produtoDao.getDao().queryForAll();
+            listProdutos = produtoDao.buscarTodos(true);
             adapterProdutos = new ArrayAdapter<>(
                     activity,
                     android.R.layout.simple_list_item_1,
                     listProdutos
             );
             activity.getLvProdutos().setAdapter(adapterProdutos);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void atualizarListView() {
+        try {
+            adapterProdutos.clear();
+            List<Produto> produtos = new ArrayList<>(produtoDao.buscarTodos(true));
+            adapterProdutos.addAll(produtos);
+            adapterProdutos.notifyDataSetChanged();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -80,15 +92,15 @@ public class ProdutoController {
                 produto = adapterProdutos.getItem(position);
 
                 AlertDialog.Builder alerta = new AlertDialog.Builder(activity);
-                alerta.setTitle("Produto");
+                alerta.setTitle(R.string.produto);
                 alerta.setMessage(produto.toString());
-                alerta.setNegativeButton("Fechar", new DialogInterface.OnClickListener() {
+                alerta.setNegativeButton(R.string.fechar, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         produto = null;
                     }
                 });
-                alerta.setPositiveButton("Editar", new DialogInterface.OnClickListener() {
+                alerta.setPositiveButton(R.string.editar, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         popularFormAction(produto);
@@ -113,17 +125,18 @@ public class ProdutoController {
 
     private void cadastrar() {
         Produto produto = getProdutoForm();
+        produto.setAtivo(true);
         try {
             int res = produtoDao.getDao().create(produto);
             adapterProdutos.add(produto);
 
             if (res > 0) {
-                Toast.makeText(activity, "Cadastrado com sucesso", Toast.LENGTH_SHORT).show();
+                Toast.makeText(activity, R.string.cadastrado_com_sucesso, Toast.LENGTH_SHORT).show();
             } else {
-                Toast.makeText(activity, "Tente novamente em breve", Toast.LENGTH_SHORT).show();
+                Toast.makeText(activity, R.string.tente_novamente_em_breve, Toast.LENGTH_SHORT).show();
             }
 
-            Toast.makeText(activity, "Id:" + produto.getId(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(activity, activity.getString(R.string.id_) + produto.getId(), Toast.LENGTH_SHORT).show();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -136,9 +149,9 @@ public class ProdutoController {
             adapterProdutos.notifyDataSetChanged();
             int res = produtoDao.getDao().update(this.produto);
             if (res > 0) {
-                Toast.makeText(activity, "Sucesso", Toast.LENGTH_SHORT).show();
+                Toast.makeText(activity, R.string.sucesso, Toast.LENGTH_SHORT).show();
             } else {
-                Toast.makeText(activity, "Tente mais tarde", Toast.LENGTH_SHORT).show();
+                Toast.makeText(activity, R.string.tente_mais_tarde, Toast.LENGTH_SHORT).show();
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -178,21 +191,22 @@ public class ProdutoController {
 
     private void confirmarExclusaoAction(final Produto p) {
         AlertDialog.Builder alerta = new AlertDialog.Builder(activity);
-        alerta.setTitle("Excluindo Produto");
-        alerta.setMessage("Deseja realmente excluir o produto " + p.getNome() + "?");
+        alerta.setTitle(R.string.excluindo_produto);
+        alerta.setMessage(activity.getString(R.string.deseja_realmente_excluir_o_produto) + p.getNome() + "?");
         alerta.setIcon(android.R.drawable.ic_menu_delete);
-        alerta.setNegativeButton("Não", new DialogInterface.OnClickListener() {
+        alerta.setNegativeButton(R.string.nao, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 produto = null;
             }
         });
-        alerta.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+        alerta.setPositiveButton(R.string.sim, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 try {
-                    produtoDao.getDao().delete(p);
-                    adapterProdutos.remove(p);
+                    p.setAtivo(false);
+                    produtoDao.getDao().update(p);
+                    atualizarListView();
                     Toast.makeText(activity, R.string.comanda_item_excluido_sucesso, Toast.LENGTH_SHORT).show();
                 } catch (SQLException ex) {
                     ex.printStackTrace();
@@ -215,6 +229,11 @@ public class ProdutoController {
 
         if (!ProdutoBO.validarPreco(activity.getEdtPrecoProduto().getText().toString())) {
             activity.getEdtPrecoProduto().setError(activity.getString(R.string.preco_produto_obrigatorio));
+            foiValidado = false;
+        }
+
+        if (!ProdutoBO.validarMargemDePreco(activity.getEdtPrecoProduto().getText().toString())) {
+            activity.getEdtPrecoProduto().setError(activity.getString(R.string.preco_produto_margem_permitida));
             foiValidado = false;
         }
         return foiValidado;

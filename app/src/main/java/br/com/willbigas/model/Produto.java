@@ -17,6 +17,10 @@ public class Produto {
     @DatabaseField(canBeNull = false)
     private Double valor;
 
+    @DatabaseField(canBeNull = false)
+    private Boolean ativo;
+
+
     public Produto() {
     }
 
@@ -25,10 +29,11 @@ public class Produto {
         this.valor = valor;
     }
 
-    public Produto(Integer id, String nome, Double valor) {
+    public Produto(Integer id, String nome, Double valor, Boolean ativo) {
         this.id = id;
         this.nome = nome;
         this.valor = valor;
+        this.ativo = ativo;
     }
 
     public Integer getId() {
@@ -53,6 +58,14 @@ public class Produto {
 
     public void setValor(Double valor) {
         this.valor = valor;
+    }
+
+    public Boolean getAtivo() {
+        return ativo;
+    }
+
+    public void setAtivo(Boolean ativo) {
+        this.ativo = ativo;
     }
 
     @Override

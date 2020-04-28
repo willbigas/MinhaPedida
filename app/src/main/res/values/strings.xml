@@ -28,4 +28,14 @@
     <string name="sim">Sim</string>
     <string name="somado_mais_um_a_quantidade_do_item_selecionado">Somado +1 a quantidade do item selecionado</string>
     <string name="subtraido_menos_um_a_quantidade_do_item_selecionado">Subtraido -1 a quantidade do item selecionado</string>
+    <string name="preco_produto_margem_permitida">O Preço do Produto deve estar entre 0 e 9999</string>
+    <string name="cadastrado_com_sucesso">Cadastrado com sucesso</string>
+    <string name="tente_novamente_em_breve">Tente novamente em breve</string>
+    <string name="id_" translatable="false">Id:</string>
+    <string name="sucesso">Sucesso</string>
+    <string name="tente_mais_tarde">Tente mais tarde</string>
+    <string name="fechar">Fechar</string>
+    <string name="editar">Editar</string>
+    <string name="excluindo_produto">Excluindo Produto</string>
+    <string name="deseja_realmente_excluir_o_produto">Deseja realmente excluir o produto</string>
 </resources>

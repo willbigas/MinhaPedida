@@ -27,4 +27,13 @@
     <string name="sim">Yes</string>
     <string name="somado_mais_um_a_quantidade_do_item_selecionado">Added +1 the quantity of the selected item</string>
     <string name="subtraido_menos_um_a_quantidade_do_item_selecionado">Subtracted -1 from the quantity of the selected item</string>
+    <string name="preco_produto_margem_permitida">Product Price must be between 0 and 9999</string>
+    <string name="cadastrado_com_sucesso">Registered successfully</string>
+    <string name="tente_novamente_em_breve">Please try again soon</string>
+    <string name="sucesso">Success</string>
+    <string name="tente_mais_tarde">Try later</string>
+    <string name="fechar">Close</string>
+    <string name="editar">To edit</string>
+    <string name="excluindo_produto">Excluding Product</string>
+    <string name="deseja_realmente_excluir_o_produto">Do you really want to delete the product</string>
 </resources>

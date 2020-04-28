@@ -42,7 +42,7 @@ public class ComandaItemController {
             adapterProdutos = new ArrayAdapter<>(
                     activity,
                     android.R.layout.simple_spinner_item,
-                    produtoDao.getDao().queryForAll()
+                    produtoDao.buscarTodos(true)
             );
             activity.getSpinnerProduto().setAdapter(adapterProdutos);
         } catch (SQLException e) {
