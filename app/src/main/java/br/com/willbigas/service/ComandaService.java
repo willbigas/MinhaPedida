@@ -28,7 +28,6 @@ public class ComandaService {
         return comanda;
     }
 
-
     public Comanda recalcularTotal(Comanda comanda) {
         Double valorTotal = 0.0;
 

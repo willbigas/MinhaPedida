@@ -18,4 +18,13 @@
     <string name="produto_adicionado_sucesso">Product successfully added!</string>
     <string name="comanda_item_adicionado_sucesso">Command item successfully added</string>
     <string name="comanda_item_excluido_sucesso">Command item successfully deleted</string>
+    <string name="cancelar">Cancel</string>
+    <string name="editar_quantidade_do_item">Edit item quantity</string>
+    <string name="excluindo_item_da_comanda">Deleting command item</string>
+    <string name="deseja_realmente_excluir_item">Do you really want to delete the item</string>
+    <string name="da_comanda">command?</string>
+    <string name="nao">Not</string>
+    <string name="sim">Yes</string>
+    <string name="somado_mais_um_a_quantidade_do_item_selecionado">Added +1 the quantity of the selected item</string>
+    <string name="subtraido_menos_um_a_quantidade_do_item_selecionado">Subtracted -1 from the quantity of the selected item</string>
 </resources>

@@ -7,10 +7,8 @@ import java.sql.SQLException;
 
 import br.com.willbigas.R;
 import br.com.willbigas.dao.ComandaDao;
-import br.com.willbigas.dao.ComandaItemDao;
 import br.com.willbigas.dao.ProdutoDao;
 import br.com.willbigas.model.Produto;
-import br.com.willbigas.service.ComandaItemService;
 import br.com.willbigas.service.ComandaService;
 import br.com.willbigas.view.ComandaItemActivity;
 
@@ -22,10 +20,8 @@ public class ComandaItemController {
 
     private ProdutoDao produtoDao;
     private ComandaDao comandaDao;
-    private ComandaItemDao comandaItemDao;
 
     private ComandaService comandaService;
-    private ComandaItemService comandaItemService;
 
 
     public ComandaItemController(ComandaItemActivity activity) {
@@ -37,9 +33,7 @@ public class ComandaItemController {
     private void initializeInstances() {
         produtoDao = new ProdutoDao(this.activity);
         comandaDao = new ComandaDao(this.activity);
-        comandaItemDao = new ComandaItemDao(this.activity);
         comandaService = new ComandaService();
-        comandaItemService = new ComandaItemService();
     }
 
 
